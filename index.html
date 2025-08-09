@@ -1,0 +1,140 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Migrator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #fff;
+        margin-top: -40px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        margin-top: -20px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        margin-bottom: 15px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 600px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 20px;
+        padding-top: 50px;
+        width: 100%;
+      }
+
+      .name {
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        padding-left: 20px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      nav ul li a:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="name">Easy Migrator</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player
+      src="https://lottie.host/bbf61291-e2bb-4aea-b582-3710bee12113/xHkcQfDO32.json"
+      background="##FFFFFF"
+      speed="1"
+      style="width: 600px; height: 600px"
+      loop
+      autoplay
+      direction="1"
+      mode="normal"
+    ></lottie-player>
+    <form id="inputForm" action="/process-input" method="post">
+      <input
+        type="text"
+        id="endpoint"
+        placeholder="RDS의 엔드포인트"
+        name="endpoint"
+      />
+      <input
+        type="text"
+        id="masterName"
+        placeholder="마스터 사용자 이름"
+        name="masterName"
+      />
+      <input
+        type="password"
+        id="masterPassword"
+        placeholder="마스터 암호"
+        name="masterPassword"
+      />
+      <input type="text" id="dbName" placeholder="DB 이름" name="dbName" />
+      <input
+        type="text"
+        id="sqlFilePath"
+        placeholder="로컬 PC의 .sql 파일 경로"
+        name="sqlFilePath"
+      />
+      <button type="submit">전송</button>
+    </form>
+  </body>
+</html>
